@@ -21,7 +21,7 @@ var param = new SqlParameter("@id", id);
 var param2 = new SqlParameter("job", jobTitle);
 paramList[0] = param;
 paramList[1] = param2;
-table = ExecuteSelectCommandWithParameters(con, cmd, commandName, paramList);
+table = ExecuteSelectCommand(con, cmd, commandName, paramList);
 
 DisplayTableRows(table);
 Console.ReadKey();
@@ -37,7 +37,11 @@ static void DisplayTableRows(DataTable dataTable)
     }
 }
 
-static DataTable ExecuteSelectCommand(SqlConnection con, CommandType cmdType, string commandName)
+static DataTable ExecuteSelectCommand(
+    SqlConnection con,
+    CommandType cmdType,
+    string commandName,
+    SqlParameter[] param = default)
 {
     var cmd = new SqlCommand();
     DataTable table = new DataTable();
@@ -48,6 +52,10 @@ static DataTable ExecuteSelectCommand(SqlConnection con, CommandType cmdType, st
     cmd = con.CreateCommand();
     cmd.CommandType = cmdType;
     cmd.CommandText = commandName;
+
+    if(param != null)
+        cmd.Parameters.AddRange(param);
+
     try
     {
         SqlDataAdapter da = new SqlDataAdapter();
@@ -60,33 +68,5 @@ static DataTable ExecuteSelectCommand(SqlConnection con, CommandType cmdType, st
         cmd = null;
         con.Close();
     }
-    return table;
-}
-
-static DataTable ExecuteSelectCommandWithParameters(SqlConnection con, CommandType cmdType, string commandText, SqlParameter[] param)
-{
-    var cmd = new SqlCommand();
-    var table = new DataTable();
-    if (con.State == ConnectionState.Closed)
-        con.Open();
-    
-    cmd = con.CreateCommand();
-    cmd.CommandType = cmdType;
-    cmd.CommandText = commandText;
-    cmd.Parameters.AddRange(param);
-    
-    try
-    {
-        var da = new SqlDataAdapter();
-        using (da = new SqlDataAdapter(cmd))
-        da.Fill(table);
-    }
-    finally
-    {
-        con.Dispose();
-        cmd = null;
-        con.Close();
-    }
-    
     return table;
 }
