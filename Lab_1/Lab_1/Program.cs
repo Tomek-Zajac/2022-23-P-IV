@@ -2,19 +2,13 @@
 using System.Data;
 using System.Data.SqlClient;
 
-var connectionString = ConfigurationManager.ConnectionStrings["AdventureWorks2012_DataEntities"].ConnectionString;
+var connectionString = ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString;
 var con = new SqlConnection(connectionString);
     
 var cmd = CommandType.Text;
 var commandName = "Select * from Employee";
 var table = ExecuteSelectCommand(con, cmd, commandName);
-foreach (DataRow item in table.Rows)
-{
-    Console.WriteLine("Id: {0}, Job title: {1}, Płeć: {2}",
-    item["BusinessEntityID"],
-    item["JobTitle"].ToString(),
-    item["Gender"].ToString());
-}
+DisplayTableRows(table);
 Console.ReadKey();
 Console.WriteLine("----------------------------------------------");
 
@@ -29,14 +23,19 @@ paramList[0] = param;
 paramList[1] = param2;
 table = ExecuteSelectCommandWithParameters(con, cmd, commandName, paramList);
 
-foreach (DataRow item in table.Rows)
-{
-    Console.WriteLine("Id: {0}, Job title: {1}, Płeć: {2}",
-    item["BusinessEntityID"],
-    item["JobTitle"].ToString(),
-    item["Gender"].ToString());
-}
+DisplayTableRows(table);
 Console.ReadKey();
+
+static void DisplayTableRows(DataTable dataTable)
+{
+    foreach (DataRow item in dataTable.Rows)
+    {
+        Console.WriteLine("Id: {0}, Job title: {1}, Płeć: {2}",
+        item["BusinessEntityID"],
+        item["JobTitle"].ToString(),
+        item["Gender"].ToString());
+    }
+}
 
 static DataTable ExecuteSelectCommand(SqlConnection con, CommandType cmdType, string commandName)
 {
