@@ -1,0 +1,15 @@
+/Users/tomaszzajac/Desktop/P4/Lab_1/Lab_1/bin/Debug/net7.0/Lab_1
+/Users/tomaszzajac/Desktop/P4/Lab_1/Lab_1/bin/Debug/net7.0/Lab_1.deps.json
+/Users/tomaszzajac/Desktop/P4/Lab_1/Lab_1/bin/Debug/net7.0/Lab_1.runtimeconfig.json
+/Users/tomaszzajac/Desktop/P4/Lab_1/Lab_1/bin/Debug/net7.0/Lab_1.dll
+/Users/tomaszzajac/Desktop/P4/Lab_1/Lab_1/bin/Debug/net7.0/Lab_1.pdb
+/Users/tomaszzajac/Desktop/P4/Lab_1/Lab_1/obj/Debug/net7.0/Lab_1.csproj.AssemblyReference.cache
+/Users/tomaszzajac/Desktop/P4/Lab_1/Lab_1/obj/Debug/net7.0/Lab_1.GeneratedMSBuildEditorConfig.editorconfig
+/Users/tomaszzajac/Desktop/P4/Lab_1/Lab_1/obj/Debug/net7.0/Lab_1.AssemblyInfoInputs.cache
+/Users/tomaszzajac/Desktop/P4/Lab_1/Lab_1/obj/Debug/net7.0/Lab_1.AssemblyInfo.cs
+/Users/tomaszzajac/Desktop/P4/Lab_1/Lab_1/obj/Debug/net7.0/Lab_1.csproj.CoreCompileInputs.cache
+/Users/tomaszzajac/Desktop/P4/Lab_1/Lab_1/obj/Debug/net7.0/Lab_1.dll
+/Users/tomaszzajac/Desktop/P4/Lab_1/Lab_1/obj/Debug/net7.0/refint/Lab_1.dll
+/Users/tomaszzajac/Desktop/P4/Lab_1/Lab_1/obj/Debug/net7.0/Lab_1.pdb
+/Users/tomaszzajac/Desktop/P4/Lab_1/Lab_1/obj/Debug/net7.0/Lab_1.genruntimeconfig.cache
+/Users/tomaszzajac/Desktop/P4/Lab_1/Lab_1/obj/Debug/net7.0/ref/Lab_1.dll
